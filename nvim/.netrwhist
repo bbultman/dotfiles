@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/mnt/main/code/aw/aw-finance-web'
+let g:netrw_dirhist_1='/mnt/main/code/aw/aw-finance-web/api'
+let g:netrw_dirhist_0='/mnt/main/code/aw/aw-finance-web/api/src/api'
+let g:netrw_dirhist_9='/mnt/main/code/aw/aw-finance-web/api/src'
+let g:netrw_dirhist_8='/mnt/main/code/aw/aw-finance-web/api'
+let g:netrw_dirhist_7='/mnt/main/code/aw/aw-finance-web/api/src/api'
+let g:netrw_dirhist_6='/mnt/main/code/aw/aw-finance-web/api/src'
+let g:netrw_dirhist_5='/mnt/main/code/aw/aw-finance-web/api'
+let g:netrw_dirhist_4='/mnt/main/code/aw/aw-finance-web/ui/src/pages'
+let g:netrw_dirhist_3='/mnt/main/code/aw/aw-finance-web/ui/src'
