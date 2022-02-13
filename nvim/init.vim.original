@@ -2,6 +2,7 @@
 "
 let g:config_file_list = [
 \ 'plugins.vim',
+\ 'ranger.vim',
 \ 'coc-defaults.vim',
 \ 'ctrl-sf.vim',
 \ 'ctrl-p.vim',

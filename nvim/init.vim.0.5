@@ -1,27 +1,24 @@
 " Config management
 "
 let g:config_file_list = [
-\ 'plugins.vim',
-\ 'coc-defaults.vim',
+\ 'plugins-0.5.vim',
 \ 'ctrl-sf.vim',
 \ 'ctrl-p.vim',
 \ 'vim-test.vim',
 \ 'ranger.vim',
-\ 'dprint.vim',
 \ ]
 
 for f in g:config_file_list
     execute 'source ' . stdpath('config') . '/' . f
 endfor
 
+lua <<EOF
+require('lsp')
+EOF
+
+
 noremap <silent> <leader>ev :tabnew $MYVIMRC<CR>
 noremap <silent> <leader>sv :source $MYVIMRC<CR>
-"
-
-" Prettier
-"
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-noremap <silent> <leader>p :Prettier<CR>
 "
 
 nnoremap <silent> <leader>C V}:call nerdcommenter#Comment('x', 'toggle')<CR>

@@ -1,11 +1,9 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "css"],
+  //"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "css"],
   "diagnostic.messageTarget": "echo",
   "signature.target": "echo",
   "coc.preferences.hoverTarget": "echo",
-  "javascript.suggestionActions.enabled": true,
-  "typescript.suggestionActions.enabled": false,
-  "prettier.printWidth": 120,
-  "prettier.singleQuote": true,
-  "prettier.semi": false
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": false
 }
+
