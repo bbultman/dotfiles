@@ -1,0 +1,10 @@
+[Unit]
+Description=Ramdisk serialization service
+
+[Service]
+Type=Oneshot
+ExecStart=/usr/bin/env bash /mnt/main/ramdisk-serialize.sh /mnt/ram /mnt/main
+StandardOutput=journal
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Ramdisk setup
+Requisite=mnt-main.mount mnt-ram.mount
+
+[Service]
+Type=Oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/env bash /mnt/main/ramdisk-startup.sh /mnt/main /mnt/ram %h
+ExecStop=/usr/bin/env bash /mnt/main/ramdisk-serialize.sh /mnt/ram /mnt/main
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
