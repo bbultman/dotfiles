@@ -1,0 +1,34 @@
+# Private local-only packages
+pkgname=bb-desktop
+pkgver=0.0.4
+pkgrel=1
+pkgdesc="XPS13 desktop suite"
+arch=('x86_64')
+depends=(
+  hyprland
+  xdg-user-dirs
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-hyprland
+  cliphist
+  slurp
+  grim
+  tofi
+  swaylock
+)
+backup=(
+  home/ben/.config/hypr/hyprland.conf
+  home/ben/.config/tofi/tofi.conf
+)
+source=(
+  "hyprland.conf"
+  "tofi.conf"
+)
+sha256sums=(
+  "SKIP"
+  "SKIP"
+)
+
+package() {
+  install -Dm 0644 hyprland.conf "${pkgdir}/home/ben/.config/hypr/hyprland.conf"
+  install -Dm 0644 tofi.conf "${pkgdir}/home/ben/.config/tofi/tofi.conf"
+}
