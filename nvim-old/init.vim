@@ -21,7 +21,7 @@ noremap <silent> <leader>sv :source $MYVIMRC<CR>
 " Prettier
 "
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-noremap <silent> <leader>p :Prettier<CR>
+noremap <silent> <leader>p :Prettier<CR>:w<CR>
 "
 
 nnoremap <silent> <leader>C V}:call nerdcommenter#Comment('x', 'toggle')<CR>
@@ -48,6 +48,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+set scrolloff=10
 set expandtab
 set ignorecase
 set autoindent
@@ -57,6 +58,8 @@ set cmdheight=2
 set exrc
 set secure
 set number relativenumber
+set clipboard=unnamedplus
+
 
 set undofile
 "

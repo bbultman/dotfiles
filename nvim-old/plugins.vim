@@ -8,10 +8,13 @@ Plug 'kevinhwang91/rnvimr', { 'do': 'make sync' }
 
 Plug 'tpope/vim-eunuch'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'sheerun/vim-polyglot'
-Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm ci'  }
 Plug 'airblade/vim-rooter'
 
 Plug 'joshdick/onedark.vim'
