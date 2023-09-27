@@ -348,6 +348,8 @@ map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 map('n', '<Leader>ev', '<cmd>edit $MYVIMRC<cr>')
 
+map('v', '<Leader>d', 'yp')
+
 -- Config
 
 vim.opt.termguicolors = true
