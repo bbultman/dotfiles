@@ -346,6 +346,7 @@ map('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
 map('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
 map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+map('n', '<Leader>ev', '<cmd>edit $MYVIMRC<cr>')
 
 -- Config
 
