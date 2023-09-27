@@ -220,7 +220,17 @@ require('lazy').setup({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           },
-          ['<Esc>'] = cmp.mapping.abort(),
+          ['<Esc>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.abort()
+              fallback()
+              -- NOTE
+              -- Since `abort` does not change mode, but aborts autocompletion,
+              -- abort + fallback are used in combination to return to normal mode
+            else
+              fallback()
+            end
+          end, { 'i', 'c' }),
           ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
