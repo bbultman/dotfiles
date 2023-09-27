@@ -356,7 +356,7 @@ vim.opt.termguicolors = true
 
 vim.opt.wildignore = vim.opt.wildignore + "*/tmp/*,*.so,*.swp,*.zip"
 vim.opt.undofile = true
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.showmatch = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
