@@ -373,6 +373,7 @@ vim.opt.secure = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.completeopt = 'menu,menuone'
+vim.opt.clipboard = 'unnamedplus'
 
 --require('lua/plugins')
 --require('nvim-2/keybinds')
