@@ -9,6 +9,7 @@ depends=(
   bemenu
   xdg-user-dirs
   xdg-desktop-portal-gtk
+  xdg-desktop-portal-wlr
   cliphist
   slurp
   grim
@@ -17,7 +18,3 @@ depends=(
 backup=()
 source=()
 sha256sums=()
-
-#  tofi
-#  hyprland
-#  xdg-desktop-portal-hyprland
