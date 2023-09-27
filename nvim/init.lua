@@ -230,7 +230,7 @@ require('lazy').setup({
             else
               fallback()
             end
-          end, { 'i', 'c' }),
+          end, { 'i', 's' }),
           ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
