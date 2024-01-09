@@ -1,0 +1,69 @@
+profile laptop {
+   output "eDP-1" enable
+}
+
+profile Switzerland {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U H4ZRC00424" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile quietroom {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U H4ZT100136" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile quietroom2 {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U H4ZT200408" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile mob-monitor {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS34A650U H4ZT109941" enable mode 3440x1440@60
+}
+
+profile fff {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U H4ZT200521" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile bbb {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U H4ZT200187" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile ccc {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U H4ZT200194" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile ddd {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U H4ZT200211" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile eee {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U H4ZT200731" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile fff {
+   output "eDP-1" disable
+   output "Samsung Electric Company LS32A600U HNAT500402" enable mode 2560x1440@75 position 0,0 adaptive_sync off
+}
+
+profile home {
+   output "eDP-1" disable
+   output "DP-1" enable mode 2560x1440@165.080 position 0,0 adaptive_sync on
+}
+
+profile mob {
+   output "eDP-1" disable
+   output "DP-8" enable mode 1920x1080@60
+}
+
+profile mob2 {
+   output "eDP-1" disable
+   output "DP-7" enable mode 1920x1080@120
+}
+
