@@ -1,18 +1,17 @@
 # Private local-only packages
 pkgname=bb-desktop
-pkgver=0.0.8
+pkgver=0.0.9
 pkgrel=1
 pkgdesc="XPS13 desktop suite"
 arch=('x86_64')
 depends=(
   sway
+  slurp
+  grim
   bemenu
   xdg-user-dirs
   xdg-desktop-portal-gtk
   xdg-desktop-portal-wlr
-  cliphist
-  slurp
-  grim
   swaylock
 )
 backup=()
