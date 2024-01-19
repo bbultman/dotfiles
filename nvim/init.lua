@@ -13,77 +13,88 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = '\\'
 
-local prettier_filetypes = {
-  "css",
-  "graphql",
-  "html",
-  "javascript",
-  "javascriptreact",
-  "json",
-  "less",
-  "markdown",
-  "scss",
-  "typescript",
-  "typescriptreact",
-  "yaml",
-}
-
-vim.g.code_action_menu_show_diff = false
-vim.g.code_action_menu_show_details = false
-vim.g.code_action_menu_window_border = 'solid'
-
 require('lazy').setup({
-  { 'weilbith/nvim-code-action-menu' },
+  {
+    'github/copilot.vim',
+    lazy = false,
+    config = function ()
+      vim.g.copilot_assume_mapped = true
+    end
+  },
+  {
+    'weilbith/nvim-code-action-menu',
+    config = function ()
+      vim.g.code_action_menu_show_diff = false
+      vim.g.code_action_menu_show_details = false
+      vim.g.code_action_menu_window_border = 'solid'
+    end
+  },
   {
     'MunifTanjim/prettier.nvim',
-    ft = prettier_filetypes,
-    opts = {
-      ['null-ls'] = {
-        function ()
-          return require('prettier').config_exists({
-            check_package_json = true
-          })
-        end
-      },
-      bin = 'prettier',
-      filetypes = prettier_filetypes,
-    }
+    config = function ()
+      local prettier = require('prettier')
+      prettier.setup({
+        ["null-ls"] = {
+          condition = function()
+            return prettier.config_exists({
+              -- if `false`, skips checking `package.json` for `"prettier"` key
+              check_package_json = false,
+            })
+          end
+        },
+        filetypes = {
+          'css',
+          'graphql',
+          'html',
+          'javascript',
+          'javascriptreact',
+          'json',
+          'less',
+          'markdown',
+          'scss',
+          'typescript',
+          'typescriptreact',
+          'yaml',
+        }
+      })
+    end
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
     opts = {
-      on_attach = function (client, bufnr)
+      on_attach = function(client, bufnr)
         local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-        local event = "BufWritePre" -- or "BufWritePost"
+        local event = "BufWritePre" -- or "BufWritePre"
         local async = event == "BufWritePost"
 
         if client.supports_method("textDocument/formatting") then
-           vim.keymap.set("n", "<Leader>p", function()
-             vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-           end, { buffer = bufnr, desc = "[lsp] format" })
+          vim.keymap.set("n", "<Leader>p", function()
+            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+          end, { buffer = bufnr, desc = "[lsp] format" })
 
-         -- format on save
-         vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-         vim.api.nvim_create_autocmd(event, {
-           buffer = bufnr,
-           group = group,
-           callback = function()
-             vim.lsp.buf.format({ bufnr = bufnr, async = async })
-           end,
-           desc = "[lsp] format on save",
-         })
+          -- format on save
+          vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+          vim.api.nvim_create_autocmd(event, {
+            buffer = bufnr,
+            group = group,
+            callback = function()
+              vim.lsp.buf.format({ bufnr = bufnr, async = async })
+            end,
+            desc = "[lsp] format on save",
+          })
         end
-      end
-    },
-    dependencies = {
-      'MunifTanjim/prettier.nvim'
+
+        if client.supports_method("textDocument/rangeFormatting") then
+          vim.keymap.set("x", "<Leader>p", function()
+            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+          end, { buffer = bufnr, desc = "[lsp] format" })
+        end
+      end,
     }
   },
-  { 'folke/neodev.nvim' },
   {
     'navarasu/onedark.nvim',
     config = function()
-      vim.cmd('autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=grey') -- to Show whitespace, MUST be inserted BEFORE the colorscheme command
       require('onedark').load()
     end,
     lazy = false
@@ -101,6 +112,9 @@ require('lazy').setup({
       tele.load_extension('fzf')
       tele.setup{
         defaults = {
+          preview = {
+            filesize_limit = 1, -- MB
+          },
           layout_strategy = 'horizontal',
           layout_config = {
             horizontal = {
@@ -191,7 +205,7 @@ require('lazy').setup({
             'vim',
             'vimdoc'
           },
-          sync_install = false,
+          sync_install = true,
           highlight = { enable = true },
           indent = { enable = true },
         })
@@ -327,7 +341,7 @@ end
 
 vim.g.mapleader = '\\'
 
-map('n', '<Leader>f', '<cmd>Telescope find_files<cr>')
+map('n', '<Leader>f', '<cmd>Telescope find_files find_command=rg,--ignore,--files<cr>')
 map('n', '<Leader>F', '<cmd>Telescope live_grep<cr>')
 map('n', '<Leader>w', '<cmd>Telescope grep_string<cr>')
 map('n', '<Leader>b', '<cmd>Telescope buffers<cr>')
@@ -341,7 +355,6 @@ map('n', '<Leader>gt', '<cmd>Telescope lsp_type_definitions<cr>')
 map('n', '<Leader>gi', '<cmd>Telescope lsp_implementations<cr>')
 map('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>')
 map('n', '<Leader>a', '<cmd>CodeActionMenu<cr>')
-map('n', '<Leader>p', '<cmd>lua vim.lsp.buf.formatting()<cr>')
 map('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
 map('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
