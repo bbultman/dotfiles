@@ -1,0 +1,12 @@
+[user]
+	email = bultman.ben@gmail.com
+	name = Ben Bultman
+
+[init]
+	defaultBranch = master
+
+[pull]
+	rebase = true
+
+[includeIf "hasconfig:remote.*.url:git@akindhub:akindgroup/**"]
+  path = ~/.config/akind.gitconfig

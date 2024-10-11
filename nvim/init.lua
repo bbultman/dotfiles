@@ -14,13 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = '\\'
 
 require('lazy').setup({
-  {
-    'github/copilot.vim',
-    lazy = false,
-    config = function ()
-      vim.g.copilot_assume_mapped = true
-    end
-  },
+--  {
+--    'github/copilot.vim',
+--    lazy = false,
+--    config = function ()
+--      vim.g.copilot_assume_mapped = true
+--    end
+--  },
   {
     'weilbith/nvim-code-action-menu',
     config = function ()
@@ -42,6 +42,7 @@ require('lazy').setup({
             })
           end
         },
+        bin = 'prettier',
         filetypes = {
           'css',
           'graphql',
@@ -327,8 +328,7 @@ require('lazy').setup({
   { 'hrsh7th/cmp-buffer', event = 'VeryLazy' },
   { 'hrsh7th/cmp-path', event = 'VeryLazy' },
   { 'hrsh7th/cmp-cmdline', event = 'VeryLazy' },
-  { 'hrsh7th/cmp-calc', event = 'VeryLazy' },
-  { 'MunifTanjim/prettier.nvim', event = 'VeryLazy' }
+  { 'hrsh7th/cmp-calc', event = 'VeryLazy' }
 })
 
 -- Keybinds

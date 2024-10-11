@@ -1,0 +1,17 @@
+[user]
+  email = benjamin.bultman@akindgroup.com
+	name = Benjamin Bultman
+  signingKey = ~/.ssh/akindgroup_github.com.pub
+
+[commit]
+  template = ~/.config/akind-git-commit-template
+  gpgsign = true
+
+[gpg]
+  format = ssh
+
+[pull]
+  rebase = true
+
+[init]
+  defaultBranch = master
