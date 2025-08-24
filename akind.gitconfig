@@ -1,11 +1,9 @@
 [user]
   email = benjamin.bultman@akindgroup.com
-	name = Benjamin Bultman
-  signingKey = ~/.ssh/akindgroup_github.com.pub
+  name = Benjamin Bultman
 
 [commit]
   template = ~/.config/akind-git-commit-template
-  gpgsign = true
 
 [gpg]
   format = ssh

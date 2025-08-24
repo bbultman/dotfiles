@@ -1,9 +1,0 @@
-{
-  //"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "css"],
-  "diagnostic.messageTarget": "echo",
-  "signature.target": "echo",
-  "coc.preferences.hoverTarget": "echo",
-  "javascript.suggestionActions.enabled": false,
-  "typescript.suggestionActions.enabled": false
-}
-

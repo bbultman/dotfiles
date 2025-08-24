@@ -1,0 +1,80 @@
+[language-server]
+dprint-lsp = { command = "./node_modules/.bin/dprint", args = ["lsp"]}
+
+# [language-server.efm-lsp]
+# name = "efm-lsp" 
+# command = "efm-langserver"
+# environment = { "PRETTIERD_LOCAL_PRETTIER_ONLY" = "true" }
+# required-root-patterns = [
+#   ".prettierrc",
+#   ".prettierrc.json",
+#   ".prettierrc.js",
+#   ".prettierrc.yml",
+#   ".prettierrc.yaml",
+#   ".prettierrc.json5",
+#   ".prettierrc.mjs",
+#   ".prettierrc.cjs",
+#   ".prettierrc.toml"
+# ]
+
+#omnisharp-lsp = { command = "omnisharp" }
+
+[language-server.terraform-ls]
+command = "terraform-ls"
+args = ["serve"]
+
+[[language]]
+name = "typescript"
+language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = true
+
+[[language]]
+name = "json"
+language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = true
+
+# [[language]]
+# name = "c-sharp"
+# language-servers = [ { name = "omnisharp-lsp" } ]
+
+[[language]]
+name = "markdown"
+text-width = 120
+
+[[language]]
+name = "rust"
+language-servers = [ { name = "rust-analyzer" } ]
+
+[[language]]
+name = "hcl"
+language-servers = [ "terraform-ls" ]
+language-id = "terraform"
+
+[[language]]
+name = "tfvars"
+language-servers = [ "terraform-ls" ]
+language-id = "terraform-vars"
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
