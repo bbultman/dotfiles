@@ -3,6 +3,7 @@
 function import_config() {
   local source="$1"
   local dest="${2:-$HOME/.config}"
+  local as_sudo="${3:-no}"
 
   echo ""
   echo -en "Installing $dest/$source" >/dev/stderr
@@ -12,7 +13,11 @@ function import_config() {
     return
   fi
 
-  cp -R "$source" "$dest"
+  if [[ "$as_sudo" == "run-as-sudo" ]]; then
+    sudo cp -R "$source" "$dest"
+  else
+    cp -R "$source" "$dest"
+  fi
 
   echo -e "\rInstalling $dest/$source -> done" >/dev/stderr
 }
@@ -30,5 +35,8 @@ import_config 'starship.toml'
 import_config 'zsh-base.sh'
 import_config '.zshrc' $HOME
 import_config '.ssh' $HOME
+
+import_config 'keyd' '/etc' 'run-as-sudo'
+
 echo ""
 echo "Remember to create ssh keys"
