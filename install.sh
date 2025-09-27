@@ -22,6 +22,9 @@ function import_config() {
   echo -e "\rInstalling $dest/$source -> done" >/dev/stderr
 }
 
+import_config '.gitconfig' $HOME
+import_config '.ssh' $HOME
+import_config '.zshrc' $HOME
 import_config 'akind-git-commit-template'
 import_config 'akind.gitconfig'
 import_config 'btop'
@@ -34,8 +37,6 @@ import_config 'mako'
 import_config 'niri'
 import_config 'starship.toml'
 import_config 'zsh-base.sh'
-import_config '.zshrc' $HOME
-import_config '.ssh' $HOME
 
 import_config 'keyd' '/etc' 'run-as-sudo'
 

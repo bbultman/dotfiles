@@ -1,5 +1,5 @@
 [user]
-	email = bultman.ben@gmail.com
+	email = bultman.ben@pm.me
 	name = Ben Bultman
 
 [init]
@@ -8,5 +8,11 @@
 [pull]
 	rebase = true
 
-[includeIf "hasconfig:remote.*.url:git@akindhub:akindgroup/**"]
-  path = ~/.config/akind.gitconfig
+[push]
+	autoSetupRemote = true
+
+[advice]
+    skippedCherryPicks = false
+
+[includeIf "hasconfig:remote.*.url:git@ak:akindgroup/**"]
+	path = ~/.config/akind.gitconfig
