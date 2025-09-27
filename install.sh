@@ -24,6 +24,7 @@ function import_config() {
 
 import_config 'akind-git-commit-template'
 import_config 'akind.gitconfig'
+import_config 'btop'
 import_config 'foot'
 import_config 'helix'
 import_config 'fuzzel'
