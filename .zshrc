@@ -14,8 +14,8 @@ export EDITOR=helix
 alias iwm='iwmenu -l fuzzel'
 alias bzm='bzmenu -l fuzzel'
 alias hz='hx --vsplit ~/.config/zsh-base.sh ~/.zshrc && source ~/.zshrc'
-alias tree='eza -T'
-alias l='eza -l'
+alias tree='eza -TA'
+alias l='eza -lA'
 
 source <(COMPLETE=zsh jj)
 source <(volta completions zsh)
