@@ -25,32 +25,43 @@ args = ["serve"]
 
 [[language]]
 name = "typescript"
-language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+language-servers = [ "typescript-language-server" ]
 auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+language-servers = [ "typescript-language-server" ]
 auto-format = true
 
 [[language]]
 name = "javascript"
-language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+language-servers = [ "typescript-language-server" ]
 auto-format = true
 
 [[language]]
 name = "jsx"
-language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+language-servers = [ "typescript-language-server" ]
 auto-format = true
 
 [[language]]
 name = "json"
-language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+language-servers = [ "typescript-language-server" ]
 auto-format = true
 
 [[language]]
 name = "css"
-language-servers = [ { name = "dprint-lsp", only-features = [ "format" ] }, "typescript-language-server" ]
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+language-servers = [ "typescript-language-server" ]
+auto-format = true
+
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "html"] }
 auto-format = true
 
 # [[language]]
