@@ -5,8 +5,8 @@ Requisite=mnt-main.mount mnt-ram.mount
 [Service]
 Type=Oneshot
 RemainAfterExit=yes
-ExecStart=/usr/bin/env bash /mnt/main/ramdisk-startup.sh /mnt/main /mnt/ram %h
-ExecStop=/usr/bin/env bash /mnt/main/ramdisk-serialize.sh /mnt/ram /mnt/main
+ExecStart=/usr/bin/env bash /mnt/main/ramdisk-startup.sh /mnt/code /mnt/ram
+ExecStop=/usr/bin/env bash /mnt/main/ramdisk-serialize.sh /mnt/ram/code /mnt
 StandardOutput=journal
 StandardError=journal
 

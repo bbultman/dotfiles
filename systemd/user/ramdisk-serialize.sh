@@ -1,10 +1,8 @@
 #!/bin/bash
 
-SRC=$1    #/mnt/ram
-DEST=$2   #/mnt/main
+source=$1
+destination=$2
 
-echo "Syncing directories from $SRC into $DEST"
+echo "Syncing directories from $source into $destination"
 
-rsync -av --delete --exclude='node_modules/*' $SRC/code $DEST
-rsync -av --delete $SRC/.npm $DEST
-rsync -av --delete $SRC/pkgbuild $DEST
+rsync -av --delete --exclude='node_modules/*' "$source" "$destination"
