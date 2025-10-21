@@ -29,7 +29,7 @@ input {
     touchpad {
         // off
         tap
-        // dwt
+        dwt
         // dwtp
         // drag-lock
         natural-scroll
@@ -339,7 +339,7 @@ animations {
 //     open-maximized true
 // }
 
-window-rule {
+/-window-rule {
     match app-id="zen"
 
     open-maximized true
@@ -351,7 +351,7 @@ window-rule {
     open-floating true
 }
 
-window-rule {
+/-window-rule {
     match app-id="chromium"
 
     open-maximized true
