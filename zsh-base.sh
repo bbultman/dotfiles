@@ -35,6 +35,7 @@ export NPM_CONFIG_FUND=false
 
 alias gp='git pull'
 alias gpu='git push'
+alias grs='git restore --staged'
 alias gpsu='git push --set-upstream origin'
 alias gpf='git push --force-with-lease'
 alias gs='git status'
