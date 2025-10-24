@@ -93,3 +93,7 @@ language-id = "terraform-vars"
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "sql"
+indent = { tab-width = 2, unit = " " }
