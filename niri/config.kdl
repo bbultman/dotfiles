@@ -65,6 +65,28 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
+cursor {
+    hide-when-typing
+}
+
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+
+overview {
+    workspace-shadow {
+        // off
+        softness 40
+        spread 10
+        offset x=0 y=10
+        color "#00000050"
+    }
+
+    zoom 0.8
+   backdrop-color "#414868" // best
+}
+
 gestures { }
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
@@ -212,12 +234,10 @@ layout {
         // off
 
         width 3
-        //active-color "#ffc87f"
-        //active-color "#7fc8ff"
-        //inactive-color "#505050"
+        inactive-color "#c0caf580"
 
-        active-gradient from="#9d7cd8" to="#7aa2f7" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        active-gradient from="#ff007c" to="#bb9af7" angle=45 relative-to="workspace-view"
+        // inactive-gradient from="#ff007c50" to="#c0caf550" angle=30 relative-to="workspace-view"
     }
 
     // Tokyonight palette
