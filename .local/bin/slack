@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-exec chromium \
-  --no-first-run \
-  --disable-translate \
-  --disable-infobars \
-  --disable-features=TranslateUI \
-  --disable-features=OptimizationGuideModelDownloading,OptimizationHintsFetching,OptimizationTargetPrediction,OptimizationHints \
-  https://akindventure.slack.com
