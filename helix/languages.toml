@@ -1,75 +1,47 @@
-[language-server]
-dprint-lsp = { command = "./node_modules/.bin/dprint", args = ["lsp"]}
-
-[language-server.efm]
-command = "efm-langserver"
-
 [language-server.terraform-ls]
 command = "terraform-ls"
 args = ["serve"]
 
 [[language]]
 name = "typescript"
-# formatter is a good fallback if efm-langserver feels too complex
-# formatter = { command = './node_modules/.bin/prettier', args = ["--parser", "typescript"] }
-language-servers = [
-  { name = "efm", only-features = [ "format" ] },
-  { name = "typescript-language-server", except-features = [ "format" ] }
-]
+formatter = { command = 'prettierd', args = [".ts"] }
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
 
 [[language]]
 name = "tsx"
-# formatter = { command = './node_modules/.bin/prettier', args = ["--parser", "typescript"] }
-language-servers = [
-  { name = "efm", only-features = [ "format" ] },
-  { name = "typescript-language-server", except-features = [ "format" ] }
-]
+formatter = { command = 'prettierd', args = [".tsx"] }
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
 
 [[language]]
 name = "javascript"
-# formatter = { command = './node_modules/.bin/prettier', args = ["--parser", "typescript"] }
-language-servers = [
-  { name = "efm", only-features = [ "format" ] },
-  { name = "typescript-language-server", except-features = [ "format" ] }
-]
+formatter = { command = 'prettierd', args = [".js"] }
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
 
 [[language]]
 name = "jsx"
-# formatter = { command = './node_modules/.bin/prettier', args = ["--parser", "typescript"] }
-language-servers = [
-  { name = "efm", only-features = [ "format" ] },
-  { name = "typescript-language-server", except-features = [ "format" ] }
-]
+formatter = { command = 'prettierd', args = [".jsx"] }
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
 
 [[language]]
 name = "json"
-# formatter = { command = './node_modules/.bin/prettier', args = ["--parser", "typescript"] }
-language-servers = [
-  { name = "efm", only-features = [ "format" ] },
-  { name = "typescript-language-server", except-features = [ "format" ] }
-]
+formatter = { command = 'prettierd', args = [".json"] }
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
 
 [[language]]
 name = "css"
-# formatter = { command = './node_modules/.bin/prettier', args = ["--parser", "typescript"] }
-language-servers = [
-  { name = "efm", only-features = [ "format" ] },
-  { name = "typescript-language-server", except-features = [ "format" ] }
-]
+formatter = { command = 'prettierd', args = [".css"] }
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
 
 [[language]]
 name = "html"
-# formatter = { command = './node_modules/.bin/prettier', args = ["--parser", "typescript"] }
-language-servers = [
-  { name = "efm", only-features = [ "format" ] },
-  { name = "typescript-language-server", except-features = [ "format" ] }
-]
+formatter = { command = 'prettierd', args = [".html"] }
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
 
 [[language]]
