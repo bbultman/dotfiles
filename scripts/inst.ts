@@ -98,7 +98,7 @@ const main = async () => {
     process.stdout.write(output)
     if (sudo) {
       exec(
-        `sudo cp --update=${values.override ? 'none' : 'all'} ${source} ${target}`,
+        `sudo cp --update=${values.overwrite ? 'none' : 'all'} ${source} ${target}`,
       )
       process.stdout.cursorTo(output.length)
       process.stdout.write(` done [sudo]\n`)
@@ -107,7 +107,7 @@ const main = async () => {
 
     await cp(source, target, {
       recursive: true,
-      force: values.override ?? false,
+      force: values.overwrite ?? false,
     })
 
     process.stdout.cursorTo(output.length)
