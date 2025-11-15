@@ -41,7 +41,6 @@ alias gpf='git push --force-with-lease'
 alias gs='git status'
 alias gd='git diff'
 alias gco='git checkout'
-alias hx='helix'
 
 alias l='ls -alh --color=auto'
 
