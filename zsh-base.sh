@@ -1,7 +1,7 @@
 # Base ZSH setup, should be standard across all systems
-# 
+#
 # It does imply usage of podman/helix/niri/node etc
-# 
+#
 
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 export ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
@@ -20,6 +20,9 @@ setopt incappendhistorytime
 unsetopt flowcontrol
 autoload -Uz compinit
 compinit
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 export LC_ALL=en_US.UTF-8
 export MOZ_ENABLE_WAYLAND=1
@@ -47,6 +50,7 @@ alias l='ls -alh --color=auto'
 alias prettier='./node_modules/.bin/prettier'
 alias tsc='./node_modules/.bin/tsc'
 alias tsx='./node_modules/.bin/tsx'
+alias hx='helix'
 
 # Spawn a new terminal with the same directory
 function nw () {
@@ -64,7 +68,7 @@ function nr () {
   fi
 }
 
-# Generate a uuid-v4, print to stdout and copy to clipboard 
+# Generate a uuid-v4, print to stdout and copy to clipboard
 function uuid () {
   node -p 'require("node:crypto").randomUUID()' | tee >(wl-copy)
 }

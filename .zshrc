@@ -9,7 +9,7 @@ else
 fi
 
 export GITHUB_TOKEN=xxx
-export EDITOR=hx
+export EDITOR=helix
 
 alias iwm='iwmenu -l fuzzel'
 alias bzm='bzmenu -l fuzzel'
