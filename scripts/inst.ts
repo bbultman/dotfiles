@@ -20,6 +20,11 @@ const configList: Array<[string, string?, boolean?]> = [
   ['jj'],
   ['mako'],
   ['niri'],
+  [
+    'niri-portals.conf',
+    '/usr/local/share/xdg-desktop-portal/niri-portals.conf',
+    true,
+  ],
   ['starship.toml'],
   ['zsh-base.sh'],
   ['keyd', '/etc', true],
