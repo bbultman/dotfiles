@@ -8,9 +8,9 @@ const homeDir = os.homedir()
 const homeConfig = `${homeDir}/.config`
 
 const configList: Array<[string, string?, boolean?]> = [
-  ['.gitconfig', homeDir],
-  ['.ssh', homeDir],
-  ['.zshrc', homeDir],
+  ['.gitconfig', `${homeDir}/.gitconfig`],
+  ['.ssh', `${homeDir}/.ssh`],
+  ['.zshrc', `${homeDir}/.zshrc`],
   ['akind-git-commit-template'],
   ['akind.gitconfig'],
   ['btop'],
@@ -20,6 +20,7 @@ const configList: Array<[string, string?, boolean?]> = [
   ['jj'],
   ['mako'],
   ['niri'],
+  ['niri-dms', `${homeConfig}/niri`],
   [
     'niri-portals.conf',
     '/usr/local/share/xdg-desktop-portal/niri-portals.conf',
@@ -64,7 +65,7 @@ const allConfig = () =>
 
     arr.push({
       source,
-      target: path.join(target, source),
+      target,
       sudo,
     })
 
