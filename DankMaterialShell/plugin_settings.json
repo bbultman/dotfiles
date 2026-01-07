@@ -1,0 +1,32 @@
+{
+  "tailscale": {
+    "enabled": true
+  },
+  "displayManager": {
+    "enabled": true,
+    "brightness_eDP-1": 49.10508452868852,
+    "contrast_eDP-1": 49.98559170081967
+  },
+  "dankBatteryAlerts": {
+    "enabled": false,
+    "criticalMessage": "Battery at ${level}%",
+    "warningMessage": "Battery at ${level}%",
+    "criticalThreshold": 5
+  },
+  "dankActions": {
+    "enabled": true
+  },
+  "niriWindows": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": "!"
+  },
+  "wallpaperBing": {
+    "enabled": false,
+    "deleteOld": false
+  },
+  "dankPomodoroTimer": {
+    "enabled": true,
+    "autoSetDND": true
+  }
+}
