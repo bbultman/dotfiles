@@ -20,6 +20,7 @@ const configList: Array<[string, string?, boolean?]> = [
   ['jj'],
   ['mako'],
   ['niri'],
+  ['efm-langserver'],
   ['niri-dms', `${homeConfig}/niri`],
   [
     'niri-portals.conf',

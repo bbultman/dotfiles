@@ -2,50 +2,84 @@
 command = "terraform-ls"
 args = ["serve"]
 
+[language-server.oxfmt]
+command = "oxfmt"
+args = ["--lsp"]
+required-root-patterns = [ ".oxfmtrc.json" ]
+
+[language-server.efm-lsp-prettier]
+command = "efm-langserver"
+documentFormatting = true
+
 [[language]]
 name = "typescript"
-formatter = { command = 'prettierd', args = [".ts"] }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxfmt", only-features = [ "format" ] },
+  { name = "efm-lsp-prettier", only-features = [ "format" ] }
+]
 
 [[language]]
 name = "tsx"
-formatter = { command = 'prettierd', args = [".tsx"] }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxfmt", only-features = [ "format" ] },
+  { name = "efm-lsp-prettier", only-features = [ "format" ] }
+]
 
 [[language]]
 name = "javascript"
-formatter = { command = 'prettierd', args = [".js"] }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxfmt", only-features = [ "format" ] },
+  { name = "efm-lsp-prettier", only-features = [ "format" ] }
+]
 
 [[language]]
 name = "jsx"
-formatter = { command = 'prettierd', args = [".jsx"] }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxfmt", only-features = [ "format" ] },
+  { name = "efm-lsp-prettier", only-features = [ "format" ] }
+]
 
 [[language]]
 name = "json"
-formatter = { command = 'prettierd', args = [".json"] }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxfmt", only-features = [ "format" ] },
+  { name = "efm-lsp-prettier", only-features = [ "format" ] }
+]
 
 [[language]]
 name = "css"
-formatter = { command = 'prettierd', args = [".css"] }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxfmt", only-features = [ "format" ] },
+  { name = "efm-lsp-prettier", only-features = [ "format" ] }
+]
 
 [[language]]
 name = "html"
-formatter = { command = 'prettierd', args = [".html"] }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] } ]
 auto-format = true
+language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxfmt", only-features = [ "format" ] },
+  { name = "efm-lsp-prettier", only-features = [ "format" ] }
+]
 
 [[language]]
 name = "markdown"
+auto-format = true
+language-servers = [
+  { name = "oxfmt", only-features = [ "format" ] }
+]
 text-width = 120
 
 [[language]]
