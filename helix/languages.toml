@@ -7,6 +7,11 @@ command = "oxfmt"
 args = ["--lsp"]
 required-root-patterns = [ ".oxfmtrc.json" ]
 
+[language-server.oxlint]
+command = "oxlint"
+args = ["--lsp"]
+required-root-patterns = [ ".oxlintrc.json" ]
+
 [language-server.efm-lsp-prettier]
 command = "efm-langserver"
 documentFormatting = true
@@ -16,6 +21,7 @@ name = "typescript"
 auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxlint", except-features = [ "format" ] },
   { name = "oxfmt", only-features = [ "format" ] },
   { name = "efm-lsp-prettier", only-features = [ "format" ] }
 ]
@@ -25,6 +31,7 @@ name = "tsx"
 auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxlint", except-features = [ "format" ] },
   { name = "oxfmt", only-features = [ "format" ] },
   { name = "efm-lsp-prettier", only-features = [ "format" ] }
 ]
@@ -34,6 +41,7 @@ name = "javascript"
 auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxlint", except-features = [ "format" ] },
   { name = "oxfmt", only-features = [ "format" ] },
   { name = "efm-lsp-prettier", only-features = [ "format" ] }
 ]
@@ -43,6 +51,7 @@ name = "jsx"
 auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxlint", except-features = [ "format" ] },
   { name = "oxfmt", only-features = [ "format" ] },
   { name = "efm-lsp-prettier", only-features = [ "format" ] }
 ]
@@ -52,6 +61,7 @@ name = "json"
 auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxlint", except-features = [ "format" ] },
   { name = "oxfmt", only-features = [ "format" ] },
   { name = "efm-lsp-prettier", only-features = [ "format" ] }
 ]
@@ -61,6 +71,7 @@ name = "css"
 auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxlint", except-features = [ "format" ] },
   { name = "oxfmt", only-features = [ "format" ] },
   { name = "efm-lsp-prettier", only-features = [ "format" ] }
 ]
@@ -70,6 +81,7 @@ name = "html"
 auto-format = true
 language-servers = [
   { name = "typescript-language-server", except-features = [ "format" ] },
+  { name = "oxlint", except-features = [ "format" ] },
   { name = "oxfmt", only-features = [ "format" ] },
   { name = "efm-lsp-prettier", only-features = [ "format" ] }
 ]
@@ -78,6 +90,7 @@ language-servers = [
 name = "markdown"
 auto-format = true
 language-servers = [
+  { name = "oxlint", except-features = [ "format" ] },
   { name = "oxfmt", only-features = [ "format" ] }
 ]
 text-width = 120
