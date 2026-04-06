@@ -43,7 +43,9 @@ alias gpsu='git push --set-upstream origin'
 alias gpf='git push --force-with-lease'
 alias gs='git status'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gco='git checkout'
+alias gra='git rebase --autosquash --interactive'
 
 alias l='ls -alh --color=auto'
 
