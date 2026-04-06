@@ -108,7 +108,7 @@ output "eDP-1" {
     mode "2880x1920"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1.5
+    scale 1
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -137,12 +137,70 @@ output "Sony SONY TV  *00 0x01010101" {
     mode "3840x2160@60"
     // Centered above the laptop screen
     position x=-960 y=-2160
+    scale 1
+    layout {
+        gaps 8
+
+        preset-column-widths {
+            proportion 0.33333
+            proportion 0.5
+            proportion 0.66667
+        }
+    }
+}
+
+output "Acer Technologies XV282K KV 11100CA034200" {
+    variable-refresh-rate
+    mode "3840x2160"
+    // Centered above the laptop screen
+    position x=-960 y=-2160
+    scale 1
+    layout {
+        gaps 12
+        struts {
+            left 12
+            right 12
+            top 0
+            bottom 0
+        }
+        preset-column-widths {
+            proportion 0.33333
+            proportion 0.5
+            proportion 0.66667
+        }
+    }
 }
 
 output "NEC Corporation EA275UHD 66000228NB" {
     mode "3840x2160@60"
     // Centered above the laptop screen
     position x=-960 y=-2160
+    scale 1
+    layout {
+        gaps 8
+
+        preset-column-widths {
+            proportion 0.33333
+            proportion 0.5
+            proportion 0.66667
+        }
+    }
+}
+
+output "Samsung Electric Company LS32A600U H4ZT200213" {
+    mode "2560x1440"
+    // Centered above the laptop screen
+    position x=-160 y=-1440
+    scale 1
+    layout {
+        gaps 8
+
+        preset-column-widths {
+            proportion 0.33333
+            proportion 0.5
+            proportion 0.66667
+        }
+    }
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -165,7 +223,6 @@ layout {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
         // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-        proportion 0.33333
         proportion 0.5
         proportion 0.66667
 
@@ -240,33 +297,34 @@ layout {
         // inactive-gradient from="#ff007c50" to="#c0caf550" angle=30 relative-to="workspace-view"
     }
 
-    // Tokyonight palette
-    // #1f2335
-    // #24283b
-    // #292e42
-    // #3b4261
-    // #414868
-    // #545c7e
-    // #565f89
-    // #737aa2
-    // #a9b1d6
-    // #c0caf5
-    // #394b70
-    // #3d59a1
-    // #7aa2f7
-    // #7dcfff
-    // #b4f9f8
-    // #bb9af7
-    // #9d7cd8
-    // #ff9e64
-    // #ffc777
-    // #c3e88d
-    // #4fd6be
-    // #41a6b5
-    // #ff757f
-    // #c53b53
-    // #ff007c
-    
+// Tokyonight palette
+// #1f2335
+// #24283b
+// #292e42
+// #3b4261
+// #414868
+// #545c7e
+// #565f89
+// #737aa2
+// #a9b1d6
+// #c0caf5
+// #394b70
+// #3d59a1
+// #7aa2f7
+// #7dcfff
+// #b4f9f8
+// #bb9af7
+// #9d7cd8
+// #ff9e64
+// #ffc777
+// #c3e88d
+// #4fd6be
+// #41a6b5
+// #ff757f
+// #c53b53
+// #ff007c
+
+
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
@@ -279,13 +337,13 @@ layout {
         // radius. It has to assume that windows have square corners, leading to
         // shadow artifacts inside the CSD rounded corners. This setting fixes
         // those artifacts.
-        // 
+        //
         // However, instead you may want to set prefer-no-csd and/or
         // geometry-corner-radius. Then, niri will know the corner radius and
         // draw the shadow correctly, without having to draw it behind the
         // window. These will also remove client-side shadows if the window
         // draws any.
-        // 
+        //
         // draw-behind-window true
 
         // You can change how shadows look. The values below are in logical
@@ -346,7 +404,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 0.8
+    slowdown 1
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -410,7 +468,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 4
+    geometry-corner-radius 8
     clip-to-geometry true
 }
 
@@ -433,7 +491,7 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "s" "10%+"; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Alt+D { spawn "fuzzel"; }
+    Alt+D { spawn "sh" "-c" "fuzzel --placeholder=\"$(date '+󰥔 %R   %y-%m-%d')   󰁹 $(cat '/sys/class/power_supply/BAT1/capacity')%\""; }
 
     Alt+Shift+Escape { spawn "swaylock" "-f" "-F" "-e" "-k" "-c" "540d37"; }
 
@@ -655,3 +713,12 @@ binds {
     // moving the mouse or pressing any other key.
     Alt+Shift+P { power-off-monitors; }
 }
+
+environment {
+  XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORM "wayland"
+  QT_QPA_PLATFORMTHEME "gtk3"
+  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
